@@ -15,7 +15,9 @@ func abs(i int) int {
 func min(args ...int) (res int) {
 	res = args[0]
 	for _, arg := range args {
-		res = min(res, arg)
+		if res > arg {
+			res = arg
+		}
 	}
 	return
 }
@@ -23,7 +25,9 @@ func min(args ...int) (res int) {
 func max(args ...int) (res int) {
 	res = args[0]
 	for _, arg := range args {
-		res = max(res, arg)
+		if res < arg {
+			res = arg
+		}
 	}
 	return
 }
